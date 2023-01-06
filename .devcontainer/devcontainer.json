@@ -1,0 +1,11 @@
+{
+    "name": "gatsby",
+    "build": {
+        "context": "..",
+        "dockerfile": "../.gitpod.Dockerfile"
+    },
+    "extensions": [
+        "esbenp.prettier-vscode"
+    ],
+    "postCreateCommand": "yarn run bootstrap && cd ./examples/using-typescript && yarn install && gatsby-dev --set-path-to-repo ../.. && gatsby-dev --scan-once && npx gatsby build && cd ../.. && touch /tmp/done.txt"
+}
